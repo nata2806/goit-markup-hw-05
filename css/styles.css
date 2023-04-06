@@ -467,19 +467,15 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 .card-set {
   padding: 0;
   margin: 0;
   list-style: none;
-
   display: flex;
   flex-wrap: wrap;
-
   margin-left: -24px;
   margin-top: -48px;
 }
-
 .card-set > .card-item {
   flex-basis: culc(100% / 3 - 24px);
   margin-left: 24px;
@@ -488,14 +484,34 @@ body {
 .portfolio-link {
   display: block;
 }
-
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
-
+.portfolio-link:hover .cover-text,
+.portfolio-link:focus .cover-text {
+  transform: translate(0);
+}
+.portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.cover-text {
+  position: absolute;
+  top: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px 164px 32px;
+  background: #4d5ae5;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+}
 .card-thumb {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
