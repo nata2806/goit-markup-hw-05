@@ -149,6 +149,25 @@ body {
   margin-right: auto;
 }
 
+.current {
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  bottom: -25px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+.current.header-link::after {
+  background-color: #404bbf;
+}
+
 /* ---------------HERO------------------ */
 
 .hero {
