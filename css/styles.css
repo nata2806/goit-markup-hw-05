@@ -91,7 +91,7 @@ body {
 /* ---------------HEADER------------------ */
 
 .header {
-  padding-top: 24px;
+  padding-top: 20px;
   padding-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
@@ -118,7 +118,6 @@ body {
 .header-link::after {
   content: "";
   display: block;
-
   height: 4px;
   border-radius: 2px;
   background-color: transparent;
@@ -161,7 +160,7 @@ body {
   content: "";
   display: block;
   left: 0;
-  bottom: -27px;
+  margin-top: 25px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -217,6 +216,7 @@ body {
   color: var(--second-title-color);
   background-color: #4d5ae5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
   border-radius: 4px;
   margin: 0 auto;
 }
@@ -224,6 +224,7 @@ body {
 .button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms linear, visibility 250ms linear;
 }
 .button:hover,
 .button:focus {
@@ -304,9 +305,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 24px;
-
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-item {
@@ -325,6 +323,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-icon {
   fill: #f4f4fd;
@@ -423,6 +424,7 @@ body {
   background-color: #f4f4fd;
   padding: 12px 24px;
   display: flex;
+  cursor: pointer;
   border-radius: 4px;
 
   transition-duration: 250ms;
@@ -553,16 +555,26 @@ body {
   justify-content: center;
   gap: 16px;
 }
+
+.footer-icon: {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .footer-icon:focus,
 .footer-icon:hover {
   background-color: #31d0aa;
 }
+
+/* ---------------MODAL------------------ */
+
 .backdrop {
   position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms linear, visibility 250ms linear;
 }
 .modal {
   position: absolute;
@@ -570,11 +582,16 @@ body {
   min-height: 576px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   background: #fcfcfc;
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 250ms linear;
 }
 .modal-close-btn {
   position: absolute;
